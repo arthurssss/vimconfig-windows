@@ -46,11 +46,12 @@ set backspace=indent,eol,start
                             " 不设定在插入状态无法用退格键和 Delete 键删除回车符
 set cmdheight=1             " 设定命令行的行数为 1
 set laststatus=2            " 显示状态栏 (默认值为 1, 无法显示状态栏)
-set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&fileencoding}\ %c:%l/%L%)\ 
+set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&fileencoding}\ [col:%c]:[line:%l]/%L%)\ 
                             " 设置在状态行显示的信息
 set foldenable              " 开始折叠
 set foldmethod=syntax       " 设置语法折叠
 set foldcolumn=0            " 设置折叠区域的宽度
+set foldlevelstart=99
 setlocal foldlevel=1        " 设置折叠层数为
 " set foldclose=all           " 设置为自动关闭折叠                            
 " nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
@@ -170,6 +171,8 @@ vmap <space> I <esc>
 
 imap <c-l> <c-x><c-l>
 nmap <c-a> ggVG
+
+nmap <f2> za
 
 
 " 打开javascript折叠
