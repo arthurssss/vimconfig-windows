@@ -1,348 +1,433 @@
-"=========================================================================
-" DesCRiption: ÊÊºÏ×Ô¼ºÊ¹ÓÃµÄvimrcÎÄ¼ş£¬for Linux/Windows, GUI/Console
-"
-" Last Change: 2010Äê4ÔÂ25ÈÕ 23Ê±39·Ö Asins - asinsimple AT gmail DOT com
-"
-" Author:      Assins - asinsimple AT gmail DOT com
-"              Get latest vimrc from http://nootn.com/blog/Tool/22/ 
-"
-" Version:     1.80
-"
-"=========================================================================
+"-------------------------------------------------------------------------------
+" Maintainer:   wangweipeng <arthursssssss@gmail.com>
+" DesCRiption:  vimrc for Windows/Linux/Mac
+" Last Change:  2013/9/4
+" Author:       wangweipeng <arthursssssss@gmail.com>
+" Version:      1.0
+"-------------------------------------------------------------------------------
 
-au GUIEnter * simalt ~x		" ×î´ó»¯
-set nocompatible            " ¹Ø±Õ vi ¼æÈİÄ£Ê½
-syntax on                   " ×Ô¶¯Óï·¨¸ßÁÁ
-colorscheme desert          " Éè¶¨ÅäÉ«·½°¸
-set number                  " ÏÔÊ¾ĞĞºÅ
-set cursorline              " Í»³öÏÔÊ¾µ±Ç°ĞĞ
-set nowrap					" ²»×Ô¶¯»»ĞĞ
-set ruler                   " ´ò¿ª×´Ì¬À¸±ê³ß
-set shiftwidth=4            " Éè¶¨ << ºÍ >> ÃüÁîÒÆ¶¯Ê±µÄ¿í¶ÈÎª 4
-set softtabstop=4           " Ê¹µÃ°´ÍË¸ñ¼üÊ±¿ÉÒÔÒ»´ÎÉ¾µô 4 ¸ö¿Õ¸ñ
-set tabstop=4               " Éè¶¨ tab ³¤¶ÈÎª 4
-set expandtab				" ÓÃ space Ìæ´ú tab µÄÊäÈë
-set nobackup                " ¸²¸ÇÎÄ¼şÊ±²»±¸·İ
-set noswapfile              " ½ûÖ¹Éú³ÉÁÙÊ±ÎÄ¼ş
-set autochdir               " ×Ô¶¯ÇĞ»»µ±Ç°Ä¿Â¼Îªµ±Ç°ÎÄ¼şËùÔÚµÄÄ¿Â¼
-filetype plugin indent on   " ¿ªÆô²å¼ş
-set backupcopy=yes          " ÉèÖÃ±¸·İÊ±µÄĞĞÎªÎª¸²¸Ç
-set ignorecase smartcase    " ËÑË÷Ê±ºöÂÔ´óĞ¡Ğ´£¬µ«ÔÚÓĞÒ»¸ö»òÒÔÉÏ´óĞ´×ÖÄ¸Ê±ÈÔ±£³Ö¶Ô´óĞ¡Ğ´Ãô¸Ğ
-set nowrapscan              " ½ûÖ¹ÔÚËÑË÷µ½ÎÄ¼şÁ½¶ËÊ±ÖØĞÂËÑË÷
-"set incsearch               " ÊäÈëËÑË÷ÄÚÈİÊ±¾ÍÏÔÊ¾ËÑË÷½á¹û
-set hlsearch                " ËÑË÷Ê±¸ßÁÁÏÔÊ¾±»ÕÒµ½µÄÎÄ±¾
-"set noerrorbells            " ¹Ø±Õ´íÎóĞÅÏ¢ÏìÁå
-"set novisualbell            " ¹Ø±ÕÊ¹ÓÃ¿ÉÊÓÏìÁå´úÌæºô½Ğ
-"set t_vb=                   " ÖÃ¿Õ´íÎóÁåÉùµÄÖÕ¶Ë´úÂë
-" set showmatch               " ²åÈëÀ¨ºÅÊ±£¬¶ÌÔİµØÌø×ªµ½Æ¥ÅäµÄ¶ÔÓ¦À¨ºÅ
-" set matchtime=2             " ¶ÌÔİÌø×ªµ½Æ¥ÅäÀ¨ºÅµÄÊ±¼ä
-set magic                   " ÉèÖÃÄ§Êõ
-set hidden                  " ÔÊĞíÔÚÓĞÎ´±£´æµÄĞŞ¸ÄÊ±ÇĞ»»»º³åÇø£¬´ËÊ±µÄĞŞ¸ÄÓÉ vim ¸ºÔğ±£´æ
-"set guioptions-=T           " Òş²Ø¹¤¾ßÀ¸
-"set guioptions-=m           " Òş²Ø²Ëµ¥À¸
-set guioptions+=b			" Ë®Æ½¹ö¶¯Ìõ
-"set smartindent             " ¿ªÆôĞÂĞĞÊ±Ê¹ÓÃÖÇÄÜ×Ô¶¯Ëõ½ø
-set backspace=indent,eol,start
-                            " ²»Éè¶¨ÔÚ²åÈë×´Ì¬ÎŞ·¨ÓÃÍË¸ñ¼üºÍ Delete ¼üÉ¾³ı»Ø³µ·û
-set cmdheight=1             " Éè¶¨ÃüÁîĞĞµÄĞĞÊıÎª 1
-set laststatus=2            " ÏÔÊ¾×´Ì¬À¸ (Ä¬ÈÏÖµÎª 1, ÎŞ·¨ÏÔÊ¾×´Ì¬À¸)
-set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&fileencoding}\ [col:%c]:[line:%l]/%L%)\ 
-                            " ÉèÖÃÔÚ×´Ì¬ĞĞÏÔÊ¾µÄĞÅÏ¢
-set foldenable              " ¿ªÊ¼ÕÛµş
-set foldmethod=syntax       " ÉèÖÃÓï·¨ÕÛµş
-set foldcolumn=0            " ÉèÖÃÕÛµşÇøÓòµÄ¿í¶È
-set foldlevelstart=99
-setlocal foldlevel=1        " ÉèÖÃÕÛµş²ãÊıÎª
-" set foldclose=all           " ÉèÖÃÎª×Ô¶¯¹Ø±ÕÕÛµş                            
-" nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
-                            " ÓÃ¿Õ¸ñ¼üÀ´¿ª¹ØÕÛµş
-
-" return OS type, eg: windows, or linux, mac, et.st..
 function! MySys()
     if has("win16") || has("win32") || has("win64") || has("win95")
-        return "windows"
+        return "win"
     elseif has("unix")
-        return "linux"
+        return "unix"
+    else
+        return "mac"
     endif
 endfunction
 
-" ÓÃ»§Ä¿Â¼±äÁ¿$VIMFILES
-if MySys() == "windows"
+set nocompatible                    " å…³é—­ vi å…¼å®¹æ¨¡å¼
+
+if MySys()=="unix"                  " è‡ªåŠ¨è¯­æ³•é«˜äº®
+    if v:version<600
+        if filereadable(expand("$VIM/syntax/syntax.vim"))
+            syntax on
+        endif
+    else
+        syntax on
+    endif
+else
+    syntax on
+endif
+
+filetype on                         " æ£€æµ‹æ–‡ä»¶ç±»å‹
+if has("eval") && v:version>=600
+    filetype plugin indent on       " å¼€å¯æ’ä»¶
+endif
+
+"-------------------------------------------------------------------------------
+" ç•Œé¢
+"-------------------------------------------------------------------------------
+if has("gui_running")
+    set guioptions-=m " éšè—èœå•æ 
+    set guioptions+=T " éšè—å·¥å…·æ 
+    set guioptions+=L " éšè—å·¦ä¾§æ»šåŠ¨æ¡
+    set guioptions+=r " éšè—å³ä¾§æ»šåŠ¨æ¡
+    set guioptions+=b " éšè—åº•éƒ¨æ»šåŠ¨æ¡
+    set showtabline=2 " éšè—Tabæ 
+
+    if MySys()=="win"
+        if has("autocmd")
+            au GUIEnter * simalt ~x         " æœ€å¤§åŒ–
+        endif
+    endif
+    if v:version > 601
+        colorscheme desert                  " è®¾å®šé…è‰²æ–¹æ¡ˆ
+    endif
+else
+    if v:version > 601
+        colorscheme desert                  " è®¾å®šé…è‰²æ–¹æ¡ˆ
+    endif
+endif
+"-------------------------------------------------------------------------------
+
+if MySys() == "unix" || MySys() == "mac"
+    set shell=bash
+endif
+" æ–‡ä»¶åœ¨å…¶ä»–ç¨‹åºä¿®æ”¹åï¼Œvimè‡ªåŠ¨è½½å…¥æœ€æ–°æ–‡ä»¶
+if exists("&autoread")
+    set autoread
+endif
+" è®¾ç½®é¼ æ ‡å¯ç”¨
+if exists("&mouse")
+    set mouse=a
+endif
+set shortmess=atl                   " å¯åŠ¨æ—¶ä¸æ˜¾ç¤ºæåŠ©æç¤º
+set number                          " æ˜¾ç¤ºè¡Œå·
+set nowrap                          " ä¸è‡ªåŠ¨æ¢è¡Œ
+set ruler                           " æ‰“å¼€çŠ¶æ€æ æ ‡å°º
+set shiftwidth=4                    " è®¾å®š << å’Œ >> å‘½ä»¤ç§»åŠ¨æ—¶çš„å®½åº¦ä¸º 4
+set softtabstop=4                   " ä½¿å¾—æŒ‰é€€æ ¼é”®æ—¶å¯ä»¥ä¸€æ¬¡åˆ æ‰ 4 ä¸ªç©ºæ ¼
+set tabstop=4                       " è®¾å®š tab é•¿åº¦ä¸º 4
+set expandtab                       " ç”¨ space æ›¿ä»£ tab çš„è¾“å…¥
+set nobackup                        " è¦†ç›–æ–‡ä»¶æ—¶ä¸å¤‡ä»½
+set noswapfile                      " ç¦æ­¢ç”Ÿæˆä¸´æ—¶æ–‡ä»¶
+set autochdir                       " è‡ªåŠ¨åˆ‡æ¢å½“å‰ç›®å½•ä¸ºå½“å‰æ–‡ä»¶æ‰€åœ¨çš„ç›®å½•
+set backupcopy=yes                  " è®¾ç½®å¤‡ä»½æ—¶çš„è¡Œä¸ºä¸ºè¦†ç›–
+set ignorecase smartcase            " æœç´¢æ—¶å¿½ç•¥å¤§å°å†™ï¼Œä½†åœ¨æœ‰ä¸€ä¸ªæˆ–ä»¥ä¸Šå¤§å†™å­—æ¯æ—¶ä»ä¿æŒå¯¹å¤§å°å†™æ•æ„Ÿ
+set nowrapscan                      " ç¦æ­¢åœ¨æœç´¢åˆ°æ–‡ä»¶ä¸¤ç«¯æ—¶é‡æ–°æœç´¢
+"set incsearch                       " è¾“å…¥æœç´¢å†…å®¹æ—¶å°±æ˜¾ç¤ºæœç´¢ç»“æœ
+set hlsearch                        " æœç´¢æ—¶é«˜äº®æ˜¾ç¤ºè¢«æ‰¾åˆ°çš„æ–‡æœ¬
+set noerrorbells                    " å…³é—­é”™è¯¯ä¿¡æ¯å“é“ƒ
+set novisualbell                    " å…³é—­ä½¿ç”¨å¯è§†å“é“ƒä»£æ›¿å‘¼å«
+set t_vb=                           " ç½®ç©ºé”™è¯¯é“ƒå£°çš„ç»ˆç«¯ä»£ç 
+"set showmatch                       " æ’å…¥æ‹¬å·æ—¶ï¼ŒçŸ­æš‚åœ°è·³è½¬åˆ°åŒ¹é…çš„å¯¹åº”æ‹¬å·
+"set matchtime=2                     " çŸ­æš‚è·³è½¬åˆ°åŒ¹é…æ‹¬å·çš„æ—¶é—´
+set magic                           " è®¾ç½®é­”æœ¯
+set hidden                          " å…è®¸åœ¨æœ‰æœªä¿å­˜çš„ä¿®æ”¹æ—¶åˆ‡æ¢ç¼“å†²åŒºï¼Œæ­¤æ—¶çš„ä¿®æ”¹ç”± vim è´Ÿè´£ä¿å­˜
+"set smartindent                     " å¼€å¯æ–°è¡Œæ—¶ä½¿ç”¨æ™ºèƒ½è‡ªåŠ¨ç¼©è¿›
+set backspace=indent,eol,start      " ä¸è®¾å®šåœ¨æ’å…¥çŠ¶æ€æ— æ³•ç”¨é€€æ ¼é”®å’Œ Delete é”®åˆ é™¤å›è½¦ç¬¦
+set cmdheight=1                     " è®¾å®šå‘½ä»¤è¡Œçš„è¡Œæ•°ä¸º 1
+set history=1024                    " å‘½ä»¤å†å²æ¡æ•°
+set scrolloff=2                     " ä¸Šä¸‹å¯è§†è¡Œæ•°
+set whichwrap+=<,>                  " æŒ‰å·¦å³é”®æ—¶å¦‚æœåˆ°äº†è¡Œé¦–ï¼ˆè¡Œå°¾ï¼‰å¯ä»¥ç»§ç»­åˆ°ä¸Šä¸€è¡Œï¼ˆä¸‹ä¸€è¡Œï¼‰
+
+if v:version>=700
+    set switchbuf=usetab
+endif
+
+" æ˜¾ç¤ºTabç¬¦
+set list listchars=tab:>-,trail:_,extends:>,precedes:<
+hi NonText ctermfg=255 guifg=#888888
+hi SpecialKey ctermfg=255 guifg=#555555
+
+" çªå‡ºæ˜¾ç¤ºå½“å‰è¡Œ
+if has("gui_running")
+    if exists("&cursorline")
+        set cursorline
+    endif
+endif
+
+"-------------------------------------------------------------------------------
+" è®¾ç½®åœ¨çŠ¶æ€è¡Œæ˜¾ç¤ºçš„ä¿¡æ¯
+"-------------------------------------------------------------------------------
+set laststatus=2                    " æ˜¾ç¤ºçŠ¶æ€æ  (é»˜è®¤å€¼ä¸º 1, æ— æ³•æ˜¾ç¤ºçŠ¶æ€æ )
+set statusline=\ %<%F[%n]           " å®Œæ•´æ–‡ä»¶å
+set statusline+=%h%r%w%1*%m%*       " çŠ¶æ€
+set statusline+=%=                  " åˆ†éš”ç¬¦
+set statusline+=[%{strlen(&ft)?&ft:''}  " æ–‡ä»¶ç±»å‹
+set statusline+=%{strlen(&ft)?',':''}
+set statusline+=%{strlen(&fileencoding)?&fileencoding:''}   " æ–‡ä»¶ç¼–ç 
+set statusline+=%{strlen(&fileencoding)?',':''}
+set statusline+=%{&fileformat}]     " file format
+set statusline+=[0x%02B]            " current char
+set statusline+=[%l,%c/%L][%P]\     " offset
+"-------------------------------------------------------------------------------
+if has('title') && (has('gui_running') || &title)
+    set titlestring=
+    set titlestring+=%f\        " file name
+    set titlestring+=%h%r%w%m   " flags
+    set titlestring+=\ -\ %{v:progname} " program name
+endif
+
+"-------------------------------------------------------------------------------
+" è®¾ç½®è¯­æ³•æŠ˜å 
+"-------------------------------------------------------------------------------
+set foldenable                      " å¼€å§‹æŠ˜å 
+set foldmethod=syntax               " è®¾ç½®è¯­æ³•æŠ˜å 
+set foldcolumn=0                    " è®¾ç½®æŠ˜å åŒºåŸŸçš„å®½åº¦
+set foldlevelstart=99               " å…³é—­è¯­æ³•æŠ˜å 
+setlocal foldlevel=1                " è®¾ç½®æŠ˜å å±‚æ•°ä¸º
+"set foldclose=all                   " è®¾ç½®ä¸ºè‡ªåŠ¨å…³é—­æŠ˜å 
+"-------------------------------------------------------------------------------
+
+
+
+" ç”¨æˆ·ç›®å½•å˜é‡$VIMFILES
+if MySys() == "win"
     let $VIMFILES = $VIM.'/vimfiles'
-elseif MySys() == "linux"
+elseif MySys() == "unix" || MySys() == "mac"
     let $VIMFILES = $HOME.'/.vim'
 endif
 
-" Éè¶¨docÎÄµµÄ¿Â¼
+" è®¾å®šdocæ–‡æ¡£ç›®å½•
 let helptags=$VIMFILES.'/doc'
 
-" ÉèÖÃ×ÖÌå ÒÔ¼°ÖĞÎÄÖ§³Ö
-if has("win32")
-    set guifont=Inconsolata:h12:cANSI
-endif
-
-" ÅäÖÃ¶àÓïÑÔ»·¾³
+"-------------------------------------------------------------------------------
+" è®¾ç½®å¤šè¯­è¨€
+"-------------------------------------------------------------------------------
 if has("multi_byte")
-    " UTF-8 ±àÂë
-    set encoding=utf-8
-    set termencoding=utf-8
-    set formatoptions+=mM
-    set fencs=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1 "utf-8,gbk,unicode
-
-    if v:lang =~? '^\(zh\)\|\(ja\)\|\(ko\)'
-        set ambiwidth=double
+    set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+    if v:lang =~ "^zh_CN"
+        " Use cp936 to support GBK, euc-cn == gb2312
+        set encoding=cp936
+        set termencoding=cp936
+        set fileencoding=cp936
+    elseif v:lang =~ "^zh_TW"
+        " cp950, big5 or euc-tw
+        " Are they equal to each other?
+        set encoding=big5
+        set termencoding=big5
+        set fileencoding=big5
+    elseif v:lang =~ "^ko"
+        " Copied from someone's dotfile, untested
+        set encoding=euc-kr
+        set termencoding=euc-kr
+        set fileencoding=euc-kr
+    elseif v:lang =~ "^ja_JP"
+        " Copied from someone's dotfile, untested
+        set encoding=euc-jp
+        set termencoding=euc-jp
+        set fileencoding=euc-jp
     endif
-
-    if has("win32")
-        source $VIMRUNTIME/delmenu.vim
-        source $VIMRUNTIME/menu.vim
-        language messages zh_CN.utf-8
+    " Detect UTF-8 locale, and replace CJK setting if needed
+    if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
+        set encoding=utf-8
+        set termencoding=utf-8
+        set fileencoding=utf-8
     endif
-else
-    echoerr "Sorry, this version of (g)vim was not compiled with +multi_byte"
 endif
 
-" Buffers²Ù×÷¿ì½İ·½Ê½!
-nnoremap <C-RETURN> :bnext<CR>
-nnoremap <C-S-RETURN> :bprevious<CR>
+if exists("&ambiwidth")
+    set ambiwidth=double
+endif
+"-------------------------------------------------------------------------------
 
-" Tab²Ù×÷¿ì½İ·½Ê½!
-nnoremap <C-TAB> :tabnext<CR>
-nnoremap <C-S-TAB> :tabprev<CR>
+"-------------------------------------------------------------------------------
+" æŒ‰é”®ç»‘å®š
+"-------------------------------------------------------------------------------
+" æœç´¢é€‰ä¸­å­—ç¬¦
+vnoremap <silent> <a-f> y/<c-r>=escape(@", "\\/.*$^~[]")<cr><cr>
 
-"¹ØÓÚtabµÄ¿ì½İ¼ü
-" map tn :tabnext<cr>
-" map tp :tabprevious<cr>
-" map td :tabnew .<cr>
-" map te :tabedit
-" map tc :tabclose<cr>
+" æœç´¢å‰ªåˆ‡æ¿ä¸­çš„å­—ç¬¦
+nmap <a-f> /<c-r>=escape(@+, "\\/.*$^~[]")<cr><cr>
+imap <a-f> <esc>/<c-r>=escape(@+, "\\/.*$^~[]")<cr><cr>
 
-"´°¿Ú·Ö¸îÊ±,½øĞĞÇĞ»»µÄ°´¼üÈÈ¼üĞèÒªÁ¬½ÓÁ½´Î,±ÈÈç´ÓÏÂ·½´°¿ÚÒÆ¶¯
-"¹â±êµ½ÉÏ·½´°¿Ú,ĞèÒª<c-w><c-w>k,·Ç³£Âé·³,ÏÖÔÚÖØÓ³ÉäÎª<c-k>,ÇĞ»»µÄ
-"Ê±ºò»á±äµÃ·Ç³£·½±ã.
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+" åˆ é™¤æ‰€æœ‰è¡Œæœªå°¾ç©ºæ ¼
+nnoremap <f12> :%s/\s\+$//g<cr>
 
-"Ò»Ğ©²»´íµÄÓ³Éä×ª»»Óï·¨£¨Èç¹ûÔÚÒ»¸öÎÄ¼şÖĞ»ìºÏÁË²»Í¬ÓïÑÔÊ±ÓĞÓÃ£©
-nnoremap <leader>1 :set filetype=xhtml<CR>
-nnoremap <leader>2 :set filetype=css<CR>
-nnoremap <leader>3 :set filetype=javascript<CR>
-nnoremap <leader>4 :set filetype=php<CR>
+" è®¾ç½®æ¢è¡Œç¬¦
+set ffs=unix,dos,mac
+" è½¬æ¢æˆdosæ¢è¡Œç¬¦
+nmap <leader>fd :e ++ff=dos<cr>
+" è½¬æ¢æˆunixæ¢è¡Œç¬¦
+nmap <leader>fu :e ++ff=unix<cr>
 
-" set fileformats=unix,dos,mac
-" nmap <leader>fd :se fileformat=dos<CR>
-" nmap <leader>fu :se fileformat=unix<CR>
-
-" use Ctrl+[l|n|p|cc] to list|next|previous|jump to count the result
-" map <C-x>l <ESC>:cl<CR>
-" map <C-x>n <ESC>:cn<CR>
-" map <C-x>p <ESC>:cp<CR>
-" map <C-x>c <ESC>:cc<CR>
-
-
-" ÈÃ Tohtml ²úÉúÓĞ CSS Óï·¨µÄ html
-" syntax/2html.vim£¬¿ÉÒÔÓÃ:runtime! syntax/2html.vim
-let html_use_css=1
-
-" Python ÎÄ¼şµÄÒ»°ãÉèÖÃ£¬±ÈÈç²»Òª tab µÈ
-autocmd FileType python set tabstop=4 shiftwidth=4 expandtab
-autocmd FileType python map <F12> :!python %<CR>
-
-" Ñ¡ÖĞ×´Ì¬ÏÂ Ctrl+c ¸´ÖÆ
-vmap <C-c> "+y
-map <c-v> "+gp
-imap <c-v> <esc><c-v>i
-
-map Y y$
-
+" ä¿å­˜
+nmap <a-s> :wa<cr>
+imap <a-s> <esc>:wa<cr>
 nmap <c-s> :w<cr>
 imap <c-s> <esc>:w<cr>
 
+" åœ¨ç³»ç»Ÿæ”¯æŒ wildmenu ç‰¹æ€§å¯ç”¨æ–‡æœ¬æ¨¡å¼çš„èœå•
+if has('wildmenu')
+    set wildmenu    "æ‰“å¼€ wildmenu é€‰é¡¹ï¼Œå¯åŠ¨å…·æœ‰èœå•é¡¹æç¤ºçš„å‘½ä»¤è¡Œè‡ªåŠ¨å®Œæˆã€‚
+endif
+
+inoremap " ""<esc>i
+if has("autocmd")
+    autocmd BufNewFile,BufRead *.vim inoremap " "
+endif
+inoremap ' ''<esc>i
+inoremap ( ()<esc>i
+inoremap [ []<esc>i
+inoremap { {}<esc>i
+
+nmap <leader>hex :%!xxd<cr>
+nmap <leader>dec :%!xxd -r<cr>
+
+" tabé¡µé¢
+map <leader>tn :tabnew %<cr>
+map <leader>tc :tabclose<cr>
+map <leader>tm :tabmove
+
+" bufferåˆ‡æ¢
+noremap <C-j> <C-W>j
+noremap <C-k> <C-W>k
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
+
+"å¤åˆ¶ç²˜è´´
+vnoremap <c-x> "+x
+vnoremap <c-c> "+y
+map <c-v> "+gp
+imap <c-v> <esc><c-v>i
+exe 'inoremap <script> <C-V>' paste#paste_cmd['i']
+exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
+
+map Y y$
+
+" ç”¨tabé”®ç¼©è¿›
 nmap <TAB> >>
 vmap <TAB> >
 
+" ç”¨backspaceå–æ¶ˆç¼©è¿›
 nmap <BACKSPACE> <<
 vmap <BACKSPACE> <
 
+" ç©ºæ ¼é”®å®ç°ç¼©è¿›ä¸€æ ¼
 nmap <space> I <esc>
 vmap <space> I <esc>
 
 imap <c-l> <c-x><c-l>
+noremap <a-a> <c-a>
+nmap <f2> za
 nmap <c-a> ggVG
 
-nmap <f2> za
+iabbrev xdate <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
 
+if has("eval") && has("autocmd")
+    "c/cpp
+    fun! Abbrev_cpp()
+        ia <buffer> cci const_iterator
+        ia <buffer> ccl cla
+        ia <buffer> cco const
+        ia <buffer> cdb bug
+        ia <buffer> cde throw
+        ia <buffer> cdf /** file<CR><CR>/<Up>
+        ia <buffer> cdg ingroup
+        ia <buffer> cdn /** Namespace <namespace<CR><CR>/<Up>
+        ia <buffer> cdp param
+        ia <buffer> cdt test
+        ia <buffer> cdx /**<CR><CR>/<Up>
+        ia <buffer> cit iterator
+        ia <buffer> cns Namespace ianamespace
+        ia <buffer> cpr protected
+        ia <buffer> cpu public
+        ia <buffer> cpv private
+        ia <buffer> csl std::list
+        ia <buffer> csm std::map
+        ia <buffer> css std::string
+        ia <buffer> csv std::vector
+        ia <buffer> cty typedef
+        ia <buffer> cun using Namespace ianamespace
+        ia <buffer> cvi virtual
+        ia <buffer> #i #include
+        ia <buffer> #d #define
+    endfunction
 
-" ´ò¿ªjavascriptÕÛµş
-let b:javascript_fold=1
-" ´ò¿ªjavascript¶Ôdom¡¢htmlºÍcssµÄÖ§³Ö
-let javascript_enable_domhtmlcss=1
-" ÉèÖÃ×Öµä ~/.vim/dict/ÎÄ¼şµÄÂ·¾¶
-autocmd filetype javascript set dictionary=$VIMFILES/dict/javascript.dict
-autocmd filetype css set dictionary=$VIMFILES/dict/css.dict
-autocmd filetype php set dictionary=$VIMFILES/dict/php.dict
-"-----------------------------------------------------------------
-" plugin - winManager.vim ´°¿Ú¹ÜÀí
-"-----------------------------------------------------------------
-let g:winManagerWidth = 30 
-let g:defaultExplorer = 0
-let g:NERDTree_title='NERD Tree'
-let g:winManagerWindowLayout='NERDTree|BufExplorer'
+    fun! Abbrev_java()
+        ia <buffer> #i import
+        ia <buffer> #p System.out.println
+        ia <buffer> #m public static void main(String[] args)
+    endfunction
 
-function! NERDTree_Start()
-	exec 'NERDTree'
-endfunction
-function! NERDTree_IsValid()
-	return 1
-endfunction
-"nmap <F2> :WMToggle<CR>:q<CR>
-"nmap <C-F2> :WMToggle<CR>
+    fun! Abbrev_python()
+        ia <buffer> #i import
+        ia <buffer> #p print
+        ia <buffer> #m if __name__=="__main__":
+    endfunction
 
-au VimEnter * WMToggle
-au VimEnter * q
+    fun! Abbrev_aspvbs()
+        ia <buffer> #r Response.Write
+        ia <buffer> #q Request.QueryString
+        ia <buffer> #f Request.Form
+    endfunction
 
-"-----------------------------------------------------------------
-" plugin - BufExplorer.vim BuffersÇĞ»»
-" \be È«ÆÁ·½Ê½²é¿´È«²¿´ò¿ªµÄÎÄ¼şÁĞ±í
-" \bv ×óÓÒ·½Ê½²é¿´   \bs ÉÏÏÂ·½Ê½²é¿´
-"-----------------------------------------------------------------
-nnoremap <C-Tab> :bn<CR>
-nnoremap <C-S-Tab> :bp<CR>
-" <C-Tab>  ÏòÇ°Ñ­»·ÇĞ»»µ½Ã¿¸ö bufferÉÏ,²¢ÔÚµ«Ç°´°¿Ú´ò¿ª 
-" <C-S-Tab>  ÏòºóÑ­»·ÇĞ»»µ½Ã¿¸ö bufferÉÏ,²¢ÔÚµ«Ç°´°¿Ú´ò¿ª
-" let g:miniBufExplMapCTabSwitchBufs = 1
-" <C-Tab>  ÏòÇ°Ñ­»·ÇĞ»»µ½Ã¿¸ö bufferÉÏ,²¢ÔÚµ«Ç°´°¿Ú´ò¿ª 
-" <C-S-Tab>  ÏòºóÑ­»·ÇĞ»»µ½Ã¿¸ö bufferÉÏ,²¢ÔÚµ«Ç°´°¿Ú´ò¿ª
-" let g:miniBufExplMapWindowNavVim = 1
-" ÓÃ<C-¼ıÍ·¼ü>ÇĞ»»µ½ÉÏÏÂ×óÓÒ´°¿ÚÖĞÈ¥
-" let g:miniBufExplMapWindowNavArrows = 1
+    fun! Abbrev_js()
+        ia <buffer> #a if(!0){throw Error(callStackInfo());}
+    endfunction
 
-"-----------------------------------------------------------------
-" plugin - taglist.vim  ²é¿´º¯ÊıÁĞ±í£¬ĞèÒªctags³ÌĞò
-" F4 ´ò¿ªÒş²Øtaglist´°¿Ú
-"-----------------------------------------------------------------
-if MySys() == "windows"                " Éè¶¨windowsÏµÍ³ÖĞctags³ÌĞòµÄÎ»ÖÃ
-    let Tlist_Ctags_Cmd = '"'.$VIMRUNTIME.'/ctags.exe"'
-elseif MySys() == "linux"              " Éè¶¨windowsÏµÍ³ÖĞctags³ÌĞòµÄÎ»ÖÃ
-    let Tlist_Ctags_Cmd = '/usr/bin/ctags'
+    fun! Abbrev_lua()
+        ia if if then<cr>end<up><left>
+        ia for for do<cr>end<up><left>
+        ia lcoal local
+    endfunction
+    augroup abbreviation
+        au!
+"        au FileType javascript :call Abbrev_js()
+"        au FileType cpp,c :call Abbrev_cpp()
+"        au FileType java :call Abbrev_java()
+"        au FileType python :call Abbrev_python()
+"        au FileType aspvbs :call Abbrev_aspvbs()
+        au FileType lua :call Abbrev_lua()
+    augroup END
 endif
-nnoremap <silent><F4> :TlistToggle<CR>
-let Tlist_Show_One_File = 1            " ²»Í¬Ê±ÏÔÊ¾¶à¸öÎÄ¼şµÄtag£¬Ö»ÏÔÊ¾µ±Ç°ÎÄ¼şµÄ
-let Tlist_Exit_OnlyWindow = 1          " Èç¹ûtaglist´°¿ÚÊÇ×îºóÒ»¸ö´°¿Ú£¬ÔòÍË³övim
-let Tlist_Use_Right_Window = 1         " ÔÚÓÒ²à´°¿ÚÖĞÏÔÊ¾taglist´°¿Ú
-let Tlist_File_Fold_Auto_Close=1       " ×Ô¶¯ÕÛµşµ±Ç°·Ç±à¼­ÎÄ¼şµÄ·½·¨ÁĞ±í
-let Tlist_Auto_Open = 0
-let Tlist_Auto_Update = 1
-let Tlist_Hightlight_Tag_On_BufEnter = 1
-let Tlist_Enable_Fold_Column = 0
-let Tlist_Process_File_Always = 1
-let Tlist_Display_Prototype = 0
-let Tlist_Compact_Format = 1
+
+"Move a line of text using control
+nmap <M-j> mz:m+<cr>`z
+nmap <M-k> mz:m-2<cr>`z
+vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
+vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+
+if MySys() == "mac"
+    nmap <D-j> <M-j>
+    nmap <D-k> <M-k>
+    vmap <D-j> <M-j>
+    vmap <D-k> <M-k>
+endif
+
+" åˆ›å»ºä¸€ä¸ªä¸´æ—¶æ–‡ä»¶
+map <leader>q :e ~/buffer<cr>
 
 
-"-----------------------------------------------------------------
-" plugin - mark.vim ¸ø¸÷ÖÖtags±ê¼Ç²»Í¬µÄÑÕÉ«£¬±ãÓÚ¹Û¿´µ÷Ê½µÄ²å¼ş¡£
-" \m  mark or unmark the word under (or before) the cursor
-" \r  manually input a regular expression. ÓÃÓÚËÑË÷.
-" \n  clear this mark (i.e. the mark under the cursor), or clear all highlighted marks .
-" \*  µ±Ç°MarkWordµÄÏÂÒ»¸ö     \#  µ±Ç°MarkWordµÄÉÏÒ»¸ö
-" \/  ËùÓĞMarkWordsµÄÏÂÒ»¸ö    \?  ËùÓĞMarkWordsµÄÉÏÒ»¸ö
-"-----------------------------------------------------------------
 
+"===============================================================================
+" DesCRiption: æ’ä»¶
+"===============================================================================
 
 "-----------------------------------------------------------------
-" plugin - NERD_tree.vim ÒÔÊ÷×´·½Ê½ä¯ÀÀÏµÍ³ÖĞµÄÎÄ¼şºÍÄ¿Â¼
-" :ERDtree ´ò¿ªNERD_tree         :NERDtreeClose    ¹Ø±ÕNERD_tree
-" o ´ò¿ª¹Ø±ÕÎÄ¼ş»òÕßÄ¿Â¼         t ÔÚ±êÇ©Ò³ÖĞ´ò¿ª
-" T ÔÚºóÌ¨±êÇ©Ò³ÖĞ´ò¿ª           ! Ö´ĞĞ´ËÎÄ¼ş
-" p µ½ÉÏ²ãÄ¿Â¼                   P µ½¸ùÄ¿Â¼
-" K µ½µÚÒ»¸ö½Úµã                 J µ½×îºóÒ»¸ö½Úµã
-" u ´ò¿ªÉÏ²ãÄ¿Â¼                 m ÏÔÊ¾ÎÄ¼şÏµÍ³²Ëµ¥£¨Ìí¼Ó¡¢É¾³ı¡¢ÒÆ¶¯²Ù×÷£©
-" r µİ¹éË¢ĞÂµ±Ç°Ä¿Â¼             R µİ¹éË¢ĞÂµ±Ç°¸ùÄ¿Â¼
+" plugin - winManager.vim çª—å£ç®¡ç†
 "-----------------------------------------------------------------
-" F3 NERDTree ÇĞ»»
-map <F3> :NERDTreeToggle<CR>
-imap <F3> <ESC>:NERDTreeToggle<CR>
-let NERDTreeShowHelp=0
-let NERDChristmasTree=1
-let NERDTreeMouseMode=1
-let NERDTreeShowFiles=1
-let NERDTreeShowLineNumbers=1
-let NERDTreeWinPos='left'
-let NERDTreeWinSize=31
+if filereadable(expand("$VIMFILES/plugin/winmanager.vim"))
+    let g:winManagerWidth = 30 
+    let g:defaultExplorer = 0
+    let g:NERDTree_title='NERD Tree'
+    let g:winManagerWindowLayout='NERDTree|BufExplorer'
+
+    function! NERDTree_Start()
+        exec 'NERDTree'
+    endfunction
+    function! NERDTree_IsValid()
+        return 1
+    endfunction
+
+    nmap <F3> :WMToggle<cr>
+    imap <F3> <ESC>:WMToggle<CR>
+    au VimEnter * WMToggle
+"    au VimEnter * q
+endif
 
 "-----------------------------------------------------------------
-" plugin - NERD_commenter.vim   ×¢ÊÍ´úÂëÓÃµÄ£¬
-" [count],cc ¹â±êÒÔÏÂcountĞĞÖğĞĞÌí¼Ó×¢ÊÍ(7,cc)
-" [count],cu ¹â±êÒÔÏÂcountĞĞÖğĞĞÈ¡Ïû×¢ÊÍ(7,cu)
-" [count],cm ¹â±êÒÔÏÂcountĞĞ³¢ÊÔÌí¼Ó¿é×¢ÊÍ(7,cm)
-" ,cA ÔÚĞĞÎ²²åÈë /* */,²¢ÇÒ½øÈë²åÈëÄ£Ê½¡£ Õâ¸öÃüÁî·½±ãĞ´×¢ÊÍ¡£
-" ×¢£ºcount²ÎÊı¿ÉÑ¡£¬ÎŞÔòÄ¬ÈÏÎªÑ¡ÖĞĞĞ»òµ±Ç°ĞĞ
+" plugin - BufExplorer.vim Buffersåˆ‡æ¢
+" \be å…¨å±æ–¹å¼æŸ¥çœ‹å…¨éƒ¨æ‰“å¼€çš„æ–‡ä»¶åˆ—è¡¨
+" \bv å·¦å³æ–¹å¼æŸ¥çœ‹   \bs ä¸Šä¸‹æ–¹å¼æŸ¥çœ‹
 "-----------------------------------------------------------------
-let NERDSpaceDelims=1       " ÈÃ×¢ÊÍ·ûÓëÓï¾äÖ®¼äÁôÒ»¸ö¿Õ¸ñ
-let NERDCompactSexyComs=1   " ¶àĞĞ×¢ÊÍÊ±Ñù×Ó¸üºÃ¿´
-
+if filereadable(expand("$VIMFILES/plugin/bufexplorer.vim"))
+    nnoremap <C-Tab> :bn<CR>
+    nnoremap <C-S-Tab> :bp<CR>
+endif
 
 "-----------------------------------------------------------------
-" plugin - DoxygenToolkit.vim  ÓÉ×¢ÊÍÉú³ÉÎÄµµ£¬²¢ÇÒÄÜ¹»¿ìËÙÉú³Éº¯Êı±ê×¼×¢ÊÍ
+" plugin - NERD_tree.vim ä»¥æ ‘çŠ¶æ–¹å¼æµè§ˆç³»ç»Ÿä¸­çš„æ–‡ä»¶å’Œç›®å½•
+" :ERDtree æ‰“å¼€NERD_tree         :NERDtreeClose    å…³é—­NERD_tree
+" o æ‰“å¼€å…³é—­æ–‡ä»¶æˆ–è€…ç›®å½•         t åœ¨æ ‡ç­¾é¡µä¸­æ‰“å¼€
+" T åœ¨åå°æ ‡ç­¾é¡µä¸­æ‰“å¼€           ! æ‰§è¡Œæ­¤æ–‡ä»¶
+" p åˆ°ä¸Šå±‚ç›®å½•                   P åˆ°æ ¹ç›®å½•
+" K åˆ°ç¬¬ä¸€ä¸ªèŠ‚ç‚¹                 J åˆ°æœ€åä¸€ä¸ªèŠ‚ç‚¹
+" u æ‰“å¼€ä¸Šå±‚ç›®å½•                 m æ˜¾ç¤ºæ–‡ä»¶ç³»ç»Ÿèœå•ï¼ˆæ·»åŠ ã€åˆ é™¤ã€ç§»åŠ¨æ“ä½œï¼‰
+" r é€’å½’åˆ·æ–°å½“å‰ç›®å½•             R é€’å½’åˆ·æ–°å½“å‰æ ¹ç›®å½•
 "-----------------------------------------------------------------
-let g:DoxygenToolkit_authorName="Asins - asinsimple AT gmail DOT com"
-let g:DoxygenToolkit_briefTag_funcName="yes"
-map <leader>da :DoxAuthor<CR>
-map <leader>df :Dox<CR>
-map <leader>db :DoxBlock<CR>
-map <leader>dc a /*  */<LEFT><LEFT><LEFT>
-
-
-"-----------------------------------------------------------------
-" plugin ¨C ZenCoding.vim ºÜ¿áµÄ²å¼ş£¬HTML´úÂëÉú³É
-" ²å¼ş×îĞÂ°æ£ºhttp://github.com/mattn/zencoding-vim
-" ³£ÓÃÃüÁî¿É¿´£ºhttp://nootn.com/blog/Tool/23/
-"-----------------------------------------------------------------
-
-
-"-----------------------------------------------------------------
-" plugin ¨C checksyntax.vim    JavaScript³£¼ûÓï·¨´íÎó¼ì²é
-" Ä¬ÈÏ¿ì½İ·½Ê½Îª F5
-"-----------------------------------------------------------------
-let g:checksyntax_auto = 0 " ²»×Ô¶¯¼ì²é
-
-
-"-----------------------------------------------------------------
-" plugin - NeoComplCache.vim    ×Ô¶¯²¹È«²å¼ş
-"-----------------------------------------------------------------
-let g:AutoComplPop_NotEnableAtStartup = 1
-let g:NeoComplCache_EnableAtStartup = 1
-let g:NeoComplCache_SmartCase = 1
-let g:NeoComplCache_TagsAutoUpdate = 1
-let g:NeoComplCache_EnableInfo = 1
-let g:NeoComplCache_EnableCamelCaseCompletion = 1
-let g:NeoComplCache_MinSyntaxLength = 3
-let g:NeoComplCache_EnableSkipCompletion = 1
-let g:NeoComplCache_SkipInputTime = '0.5'
-let g:NeoComplCache_SnippetsDir = $VIMFILES.'/snippets'
-" <TAB> completion.
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-" snippets expand key
-imap <silent> <C-e> <Plug>(neocomplcache_snippets_expand)
-smap <silent> <C-e> <Plug>(neocomplcache_snippets_expand)
-
-
-"-----------------------------------------------------------------
-" plugin - matchit.vim   ¶Ô%ÃüÁî½øĞĞÀ©Õ¹Ê¹µÃÄÜÔÚÇ¶Ì×±êÇ©ºÍÓï¾äÖ®¼äÌø×ª
-" % ÕıÏòÆ¥Åä      g% ·´ÏòÆ¥Åä
-" [% ¶¨Î»¿éÊ×     ]% ¶¨Î»¿éÎ²
-"-----------------------------------------------------------------
-
-
-"-----------------------------------------------------------------
-" plugin - vcscommand.vim   ¶Ô%ÃüÁî½øĞĞÀ©Õ¹Ê¹µÃÄÜÔÚÇ¶Ì×±êÇ©ºÍÓï¾äÖ®¼äÌø×ª
-" SVN/git¹ÜÀí¹¤¾ß
-"-----------------------------------------------------------------
-
-
-"-----------------------------------------------------------------
-" plugin ¨C a.vim
-"-----------------------------------------------------------------
+if filereadable(expand("$VIMFILES/plugin/NERD_tree.vim"))
+    " F3 NERDTree åˆ‡æ¢
+"    map <F3> :NERDTreeToggle<CR>
+"    imap <F3> <ESC>:NERDTreeToggle<CR>
+    let NERDTreeShowHelp=0
+    let NERDChristmasTree=1
+    let NERDTreeMouseMode=1
+    let NERDTreeShowFiles=1
+    let NERDTreeShowLineNumbers=1
+    let NERDTreeWinPos='left'
+    let NERDTreeWinSize=31
+    let NERDTreeDirArrows=0
+endif

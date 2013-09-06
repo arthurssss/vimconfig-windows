@@ -98,11 +98,13 @@ set hidden                          " 允许在有未保存的修改时切换缓
 "set smartindent                     " 开启新行时使用智能自动缩进
 set backspace=indent,eol,start      " 不设定在插入状态无法用退格键和 Delete 键删除回车符
 set cmdheight=1                     " 设定命令行的行数为 1
-
 set history=1024                    " 命令历史条数
-set scrolloff=8                     " 上下可视行数
+set scrolloff=2                     " 上下可视行数
+set whichwrap+=<,>                  " 按左右键时如果到了行首（行尾）可以继续到上一行（下一行）
 
-set whichwrap+=<,>
+if v:version>=700
+    set switchbuf=usetab
+endif
 
 " 显示Tab符
 set list listchars=tab:>-,trail:_,extends:>,precedes:<
@@ -131,6 +133,12 @@ set statusline+=%{&fileformat}]     " file format
 set statusline+=[0x%02B]            " current char
 set statusline+=[%l,%c/%L][%P]\     " offset
 "-------------------------------------------------------------------------------
+if has('title') && (has('gui_running') || &title)
+    set titlestring=
+    set titlestring+=%f\        " file name
+    set titlestring+=%h%r%w%m   " flags
+    set titlestring+=\ -\ %{v:progname} " program name
+endif
 
 "-------------------------------------------------------------------------------
 " 设置语法折叠
@@ -199,8 +207,11 @@ endif
 " 按键绑定
 "-------------------------------------------------------------------------------
 " 搜索选中字符
-vnoremap <silent> <leader>f y/<c-r>=escape(@", "\\/.*$^~[]")<cr><cr>
-vnoremap <silent> <leader>F y?<c-r>=escape(@", "\\/.*$^~[]")<cr><cr>
+vnoremap <silent> <a-f> y/<c-r>=escape(@", "\\/.*$^~[]")<cr><cr>
+
+" 搜索剪切板中的字符
+nmap <a-f> /<c-r>=escape(@+, "\\/.*$^~[]")<cr><cr>
+imap <a-f> <esc>/<c-r>=escape(@+, "\\/.*$^~[]")<cr><cr>
 
 " 删除所有行未尾空格
 nnoremap <f12> :%s/\s\+$//g<cr>
@@ -241,14 +252,10 @@ map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
 
 " buffer切换
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-
-if v:version>=700
-    set switchbuf=usetab
-endif
+noremap <C-j> <C-W>j
+noremap <C-k> <C-W>k
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
 
 "复制粘贴
 vnoremap <c-x> "+x
@@ -260,23 +267,167 @@ exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
 
 map Y y$
 
+" 用tab键缩进
 nmap <TAB> >>
 vmap <TAB> >
 
+" 用backspace取消缩进
 nmap <BACKSPACE> <<
 vmap <BACKSPACE> <
 
+" 空格键实现缩进一格
 nmap <space> I <esc>
 vmap <space> I <esc>
 
 imap <c-l> <c-x><c-l>
-nmap <c-a> mpggVG<c-c>`p
 noremap <a-a> <c-a>
 nmap <f2> za
+nmap <c-a> ggVG
 
-noremap <C-A> gggH<C-O>G
-inoremap <C-A> <C-O>gg<C-O>gH<C-O>G
-cnoremap <C-A> <C-C>gggH<C-O>G
-onoremap <C-A> <C-C>gggH<C-O>G
-snoremap <C-A> <C-C>gggH<C-O>G
-xnoremap <C-A> <C-C>ggVG
+iabbrev xdate <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
+
+if has("eval") && has("autocmd")
+    "c/cpp
+    fun! Abbrev_cpp()
+        ia <buffer> cci const_iterator
+        ia <buffer> ccl cla
+        ia <buffer> cco const
+        ia <buffer> cdb bug
+        ia <buffer> cde throw
+        ia <buffer> cdf /** file<CR><CR>/<Up>
+        ia <buffer> cdg ingroup
+        ia <buffer> cdn /** Namespace <namespace<CR><CR>/<Up>
+        ia <buffer> cdp param
+        ia <buffer> cdt test
+        ia <buffer> cdx /**<CR><CR>/<Up>
+        ia <buffer> cit iterator
+        ia <buffer> cns Namespace ianamespace
+        ia <buffer> cpr protected
+        ia <buffer> cpu public
+        ia <buffer> cpv private
+        ia <buffer> csl std::list
+        ia <buffer> csm std::map
+        ia <buffer> css std::string
+        ia <buffer> csv std::vector
+        ia <buffer> cty typedef
+        ia <buffer> cun using Namespace ianamespace
+        ia <buffer> cvi virtual
+        ia <buffer> #i #include
+        ia <buffer> #d #define
+    endfunction
+
+    fun! Abbrev_java()
+        ia <buffer> #i import
+        ia <buffer> #p System.out.println
+        ia <buffer> #m public static void main(String[] args)
+    endfunction
+
+    fun! Abbrev_python()
+        ia <buffer> #i import
+        ia <buffer> #p print
+        ia <buffer> #m if __name__=="__main__":
+    endfunction
+
+    fun! Abbrev_aspvbs()
+        ia <buffer> #r Response.Write
+        ia <buffer> #q Request.QueryString
+        ia <buffer> #f Request.Form
+    endfunction
+
+    fun! Abbrev_js()
+        ia <buffer> #a if(!0){throw Error(callStackInfo());}
+    endfunction
+
+    fun! Abbrev_lua()
+        ia if if then<cr>end<up><left>
+        ia for for do<cr>end<up><left>
+        ia lcoal local
+    endfunction
+    augroup abbreviation
+        au!
+"        au FileType javascript :call Abbrev_js()
+"        au FileType cpp,c :call Abbrev_cpp()
+"        au FileType java :call Abbrev_java()
+"        au FileType python :call Abbrev_python()
+"        au FileType aspvbs :call Abbrev_aspvbs()
+        au FileType lua :call Abbrev_lua()
+    augroup END
+endif
+
+"Move a line of text using control
+nmap <M-j> mz:m+<cr>`z
+nmap <M-k> mz:m-2<cr>`z
+vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
+vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+
+if MySys() == "mac"
+    nmap <D-j> <M-j>
+    nmap <D-k> <M-k>
+    vmap <D-j> <M-j>
+    vmap <D-k> <M-k>
+endif
+
+" 创建一个临时文件
+map <leader>q :e ~/buffer<cr>
+
+
+
+"===============================================================================
+" DesCRiption: 插件
+"===============================================================================
+
+"-----------------------------------------------------------------
+" plugin - winManager.vim 窗口管理
+"-----------------------------------------------------------------
+if filereadable(expand("$VIMFILES/plugin/winmanager.vim"))
+    let g:winManagerWidth = 30 
+    let g:defaultExplorer = 0
+    let g:NERDTree_title='NERD Tree'
+    let g:winManagerWindowLayout='NERDTree|BufExplorer'
+
+    function! NERDTree_Start()
+        exec 'NERDTree'
+    endfunction
+    function! NERDTree_IsValid()
+        return 1
+    endfunction
+
+    nmap <F3> :WMToggle<cr>
+    imap <F3> <ESC>:WMToggle<CR>
+    au VimEnter * WMToggle
+"    au VimEnter * q
+endif
+
+"-----------------------------------------------------------------
+" plugin - BufExplorer.vim Buffers切换
+" \be 全屏方式查看全部打开的文件列表
+" \bv 左右方式查看   \bs 上下方式查看
+"-----------------------------------------------------------------
+if filereadable(expand("$VIMFILES/plugin/bufexplorer.vim"))
+    nnoremap <C-Tab> :bn<CR>
+    nnoremap <C-S-Tab> :bp<CR>
+endif
+
+"-----------------------------------------------------------------
+" plugin - NERD_tree.vim 以树状方式浏览系统中的文件和目录
+" :ERDtree 打开NERD_tree         :NERDtreeClose    关闭NERD_tree
+" o 打开关闭文件或者目录         t 在标签页中打开
+" T 在后台标签页中打开           ! 执行此文件
+" p 到上层目录                   P 到根目录
+" K 到第一个节点                 J 到最后一个节点
+" u 打开上层目录                 m 显示文件系统菜单（添加、删除、移动操作）
+" r 递归刷新当前目录             R 递归刷新当前根目录
+"-----------------------------------------------------------------
+if filereadable(expand("$VIMFILES/plugin/NERD_tree.vim"))
+    " F3 NERDTree 切换
+"    map <F3> :NERDTreeToggle<CR>
+"    imap <F3> <ESC>:NERDTreeToggle<CR>
+    let NERDTreeShowHelp=0
+    let NERDChristmasTree=1
+    let NERDTreeMouseMode=1
+    let NERDTreeShowFiles=1
+    let NERDTreeShowLineNumbers=1
+    let NERDTreeWinPos='left'
+    let NERDTreeWinSize=31
+    let NERDTreeDirArrows=0
+endif
