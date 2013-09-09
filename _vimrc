@@ -48,7 +48,7 @@ if has("gui_running")
 
     if MySys()=="win"
         if has("autocmd")
-            au GUIEnter * simalt ~x         " 最大化
+"            au GUIEnter * simalt ~x         " 最大化
         endif
     endif
     if v:version > 601
@@ -59,6 +59,8 @@ else
         colorscheme desert                  " 设定配色方案
     endif
 endif
+winpos 200 200
+set lines=40 columns=150
 "-------------------------------------------------------------------------------
 
 if MySys() == "unix" || MySys() == "mac"
@@ -68,6 +70,17 @@ endif
 "if exists("&autoread")
 "    set autoread
 "endif
+
+" 设置换行符
+set fileformats=unix,dos,mac
+
+"编辑vim配置文件
+if MySys() == "unix" || MySys() == "mac"
+    nmap <leader>e :tabnew $HOME/.vimrc<cr>
+else
+    nmap <leader>e :tabnew $VIM/_vimrc<cr>
+endif
+
 " 设置鼠标可用
 if exists("&mouse")
     set mouse=a
@@ -152,7 +165,6 @@ setlocal foldlevel=1                " 设置折叠层数为
 "-------------------------------------------------------------------------------
 
 
-
 " 用户目录变量$VIMFILES
 if MySys() == "win"
     let $VIMFILES = $VIM.'/vimfiles'
@@ -209,14 +221,16 @@ endif
 vnoremap <silent> <a-f> y/<c-r>=escape(@", "\\/.*$^~[]")<cr><cr>
 
 " 搜索剪切板中的字符
-nmap <a-f> /<c-r>=escape(@+, "\\/.*$^~[]")<cr><cr>
-imap <a-f> <esc>/<c-r>=escape(@+, "\\/.*$^~[]")<cr><cr>
+nnoremap <a-f> /<c-r>=escape(@+, "\\/.*$^~[]")<cr><cr>
+inoremap <a-f> <esc>/<c-r>=escape(@+, "\\/.*$^~[]")<cr><cr>
+
+vnoremap <leader>ff y:vimgrep /<c-r>=escape(@", "\\/.*$^~[]")<cr>/g ./*.*
+nnoremap <leader>ff :vimgrep //g ./*.*<left><left><left><left><left><left><left><left>
+inoremap <leader>ff <esc>:vimgrep //g ./*.*<left><left><left><left><left><left><left><left>
 
 " 删除所有行未尾空格
 nnoremap <f12> :%s/\s\+$//g<cr>
 
-" 设置换行符
-set ffs=unix,dos,mac
 " 转换成dos换行符
 nmap <leader>fd :e ++ff=dos<cr>
 " 转换成unix换行符
@@ -393,7 +407,7 @@ if filereadable(expand("$VIMFILES/plugin/winmanager.vim"))
 
     nmap <F3> :WMToggle<cr>
     imap <F3> <ESC>:WMToggle<CR>
-    au VimEnter * WMToggle
+"    au VimEnter * WMToggle
 "    au VimEnter * q
 endif
 
