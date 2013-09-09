@@ -40,11 +40,11 @@ endif
 "-------------------------------------------------------------------------------
 if has("gui_running")
     set guioptions-=m " 隐藏菜单栏
-    set guioptions+=T " 隐藏工具栏
+    set guioptions-=T " 隐藏工具栏
     set guioptions+=L " 隐藏左侧滚动条
     set guioptions+=r " 隐藏右侧滚动条
     set guioptions+=b " 隐藏底部滚动条
-    set showtabline=2 " 隐藏Tab栏
+    set showtabline=1 " 隐藏Tab栏
 
     if MySys()=="win"
         if has("autocmd")
@@ -201,6 +201,12 @@ endif
 if exists("&ambiwidth")
     set ambiwidth=double
 endif
+
+if MySys() == "win"
+    source $VIMRUNTIME/delmenu.vim
+    source $VIMRUNTIME/menu.vim
+    language messages zh_CN.utf-8
+endif
 "-------------------------------------------------------------------------------
 
 "-------------------------------------------------------------------------------
@@ -339,8 +345,8 @@ if has("eval") && has("autocmd")
     endfunction
 
     fun! Abbrev_lua()
-        ia if if then<cr>end<up><left>
-        ia for for do<cr>end<up><left>
+        ia ifx if then<cr>end<up><left>
+        ia forx for do<cr>end<up><left>
         ia lcoal local
     endfunction
     augroup abbreviation
