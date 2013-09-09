@@ -61,6 +61,12 @@ else
 endif
 winpos 200 200
 set lines=40 columns=150
+
+" 设置字体
+if has("gui_running") && exists("&fuopt")
+    se gfn=Monaco:h14
+    se fuopt+=maxhorz
+endif
 "-------------------------------------------------------------------------------
 
 if MySys() == "unix" || MySys() == "mac"
@@ -251,7 +257,9 @@ inoremap " ""<esc>i
 if has("autocmd")
     autocmd BufNewFile,BufRead *.vim inoremap " "
 endif
-inoremap ' ''<esc>i
+if MySys() == "unix" && MySys() == "mac"
+    inoremap ' ''<esc>i
+endif
 inoremap ( ()<esc>i
 inoremap [ []<esc>i
 inoremap { {}<esc>i
