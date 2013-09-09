@@ -809,7 +809,7 @@ function s:GetFileTypeSettings(ft)
     elseif fileType =~ '^\(plsql\|vhdl\|ahdl\|ada\|asn\|csp\|eiffel\|gdmo\|'.
 		\ 'haskell\|lace\|lua\|mib\|sather\|sql\|sqlforms\|sqlj\|'.
 		\ 'stp\)$'
-	let b:ECcommentOpen = '--'
+	let b:ECcommentOpen = '--\~ '
 	let b:ECcommentClose = ''
     elseif fileType == 'abaqus'
 	let b:ECcommentOpen = '**'
@@ -1540,7 +1540,7 @@ function s:SetKeybindings(where)
 	    let s:X = '<M-y>'
 	else
 	    let s:c = '<Leader>c'
-	    let s:x = '<Leader>x'
+	    let s:x = '<f1>' "'<Leader>x'
 	    let s:C = '<Leader>C'
 	    let s:X = '<Leader>X'
 	endif

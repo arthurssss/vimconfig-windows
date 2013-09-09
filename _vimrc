@@ -135,7 +135,7 @@ set statusline+=[%l,%c/%L][%P]\     " offset
 "-------------------------------------------------------------------------------
 if has('title') && (has('gui_running') || &title)
     set titlestring=
-    set titlestring+=%f\        " file name
+    set titlestring+=%f\ (%F)       " file name
     set titlestring+=%h%r%w%m   " flags
     set titlestring+=\ -\ %{v:progname} " program name
 endif
