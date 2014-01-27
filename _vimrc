@@ -59,8 +59,8 @@ else
         colorscheme desert                  " 设定配色方案
     endif
 endif
-winpos 200 200
-set lines=40 columns=150
+winpos 100 150
+set lines=40 columns=130
 
 " 设置字体
 if has("gui_running") && exists("&fuopt")
@@ -126,9 +126,9 @@ if v:version>=700
 endif
 
 " 显示Tab符
-set list listchars=tab:>-,trail:_,extends:>,precedes:<
-hi NonText ctermfg=255 guifg=#888888
-hi SpecialKey ctermfg=255 guifg=#555555
+"set list listchars=tab:>-,trail:_,extends:>,precedes:<
+"hi NonText ctermfg=255 guifg=#888888
+"hi SpecialKey ctermfg=255 guifg=#555555
 
 " 突出显示当前行
 if has("gui_running")
@@ -253,16 +253,16 @@ if has('wildmenu')
     set wildmenu    "打开 wildmenu 选项，启动具有菜单项提示的命令行自动完成。
 endif
 
-inoremap " ""<esc>i
-if has("autocmd")
-    autocmd BufNewFile,BufRead *.vim inoremap " "
-endif
-if MySys() == "unix" && MySys() == "mac"
-    inoremap ' ''<esc>i
-endif
-inoremap ( ()<esc>i
-inoremap [ []<esc>i
-inoremap { {}<esc>i
+"inoremap " ""<esc>i
+"if has("autocmd")
+"    autocmd BufNewFile,BufRead *.vim inoremap " "
+"endif
+"if MySys() == "unix" && MySys() == "mac"
+"    inoremap ' ''<esc>i
+"endif
+"inoremap ( ()<esc>i
+"inoremap [ []<esc>i
+"inoremap { {}<esc>i
 
 nmap <leader>hex :%!xxd<cr>
 nmap <leader>dec :%!xxd -r<cr>
